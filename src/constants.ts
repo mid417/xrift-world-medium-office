@@ -1,12 +1,20 @@
 export const WORLD_CONFIG = {
-  size: 20,
-  wallHeight: 5,
-  wallThickness: 0.5,
+  size_x: 45,
+  size_z: 30,
+  wallHeight: 2.5,
+  wallThickness: 0.2,
+  pillarHeight: 2.5,
+  pillarSize: 1.25,
+  partisionHeight: 1.8,
 } as const
 
 export const COLORS = {
-  ground: '#90EE90',
+  ground: '#acacacff',
   wall: '#8B4513',
+  pillar: '#584d4dff',
+  corridor:'#618fd4ff',
+  partision: '#b4caff',
+  table: '#ffffff',
   decorations: {
     box: '#FFFF00',
     cylinder: '#4169E1',
