@@ -1,11 +1,11 @@
 export const WORLD_CONFIG = {
   size_x: 45,
   size_z: 30,
-  wallHeight: 2.5,
+  wallHeight: 3.0,
   wallThickness: 0.2,
-  pillarHeight: 2.5,
+  pillarHeight: 3.4,
   pillarSize: 1.25,
-  partisionHeight: 1.8,
+  partisionHeight: 2,
 } as const
 
 export const COLORS = {

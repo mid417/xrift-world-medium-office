@@ -1,8 +1,8 @@
 {
   "world": {
     "distDir": "./dist",
-    "title": "サンプルワールド",
-    "description": "React Three FiberとRapierで作られたサンプルワールドです",
+    "title": "仮想オフィス（中）",
+    "description": "現実に存在するかもしれない、中小規模の仮想オフィス空間です。",
     "thumbnailPath": "thumbnail.png",
     "buildCommand": "npm run build",
     "ignore": [

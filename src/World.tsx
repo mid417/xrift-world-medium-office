@@ -19,7 +19,7 @@ export interface WorldProps {
 
 export const World: React.FC<WorldProps> = ({
   position = [0, 0, 0],
-  scale = 0.8,
+  scale = 0.7,
 }) => {
   const { baseUrl } = useXRift()
   const groundRef = useRef<Mesh>(null);
@@ -199,7 +199,7 @@ export const World: React.FC<WorldProps> = ({
         <mesh
           position={[10 * scale, wallHeight / 2, 20 * scale / 2]}
         >
-          <boxGeometry args={[25 * scale, wallHeight, 0.1 * scale]} />
+          <boxGeometry args={[25 * scale, wallHeight, 0.2 * scale]} />
           <meshLambertMaterial color={COLORS.pillar} />
         </mesh>
       </RigidBody>
@@ -207,7 +207,7 @@ export const World: React.FC<WorldProps> = ({
         <mesh
           position={[-2.5 * scale, wallHeight / 2, 12.5 * scale]}
         >
-          <boxGeometry args={[0.1 * scale, wallHeight, 5 * scale]} />
+          <boxGeometry args={[0.2 * scale, wallHeight, 5.2 * scale]} />
           <meshLambertMaterial color={COLORS.pillar} />
         </mesh>
       </RigidBody>

@@ -27,7 +27,7 @@ export const LandObject = ({
         <RigidBody type="fixed" colliders="cuboid" restitution={0} friction={0}>
           <RoundedBox
             position={[scale, 0.7 * scale, scale]}
-            args={[2 * scale, 0.05 * scale, 13 * scale]}
+            args={[2.5 * scale, 0.05 * scale, 13 * scale]}
             radius={0.02 * scale}
             smoothness={4}
             castShadow
