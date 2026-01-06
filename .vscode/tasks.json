@@ -12,7 +12,7 @@
     {
       "label": "プロダクションビルド & アップロード",
       "type": "shell",
-      "command": "npm run build && xrift upload world",
+      "command": "xrift upload world",
       "group": "build",
       "isBackground": false,
       "problemMatcher": ["$tsc"]
@@ -33,5 +33,13 @@
       "isBackground": true,
       "problemMatcher": ["$tsc"]
     },
+    {
+      "label": "XRift World Component upgrade",
+      "type": "shell",
+      "command": "npm install @xrift/world-components@latest",
+      "group": "test",
+      "isBackground": true,
+      "problemMatcher": ["$tsc"]
+    }
   ]
 }
