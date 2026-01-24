@@ -1,10 +1,10 @@
 import * as THREE from 'three'
 import { useRef } from "react";
 import { Mesh } from "three";
-import { RoundedBox } from '@react-three/drei'
+import { RoundedBox, useGLTF } from '@react-three/drei'
 import { RigidBody } from "@react-three/rapier";
 import { useTexture } from '@react-three/drei'
-import { useXRift } from '@xrift/world-components'
+import { useXRift, SpawnPoint } from '@xrift/world-components'
 
 import { Skybox } from './components/Skybox'
 import { WallObject } from './components/WallBase'
@@ -23,6 +23,10 @@ export const World: React.FC<WorldProps> = ({
 }) => {
   const { baseUrl } = useXRift()
   const groundRef = useRef<Mesh>(null);
+
+  // GLBモデルを読み込み
+  const { scene: keyballModel } = useGLTF(`${baseUrl}models/keyball61.glb`)
+
   const pillarHeight = WORLD_CONFIG.pillarHeight * scale;
   const pillarSize = WORLD_CONFIG.pillarSize * scale;
   const pillarPos = WORLD_CONFIG.pillarHeight / 2 * scale;
@@ -43,6 +47,9 @@ export const World: React.FC<WorldProps> = ({
 
   return (
     <group position={position} scale={scale}>
+      {/* スポーン地点 */}
+      <SpawnPoint position={[-0.5 * scale, 0.05, 9 * scale]} yaw={0} />
+
       <Skybox radius={500} />
 
       {/* 照明設定 */}
@@ -494,6 +501,14 @@ export const World: React.FC<WorldProps> = ({
           <meshLambertMaterial color={COLORS.table} />
         </RoundedBox>
       </RigidBody>
+
+      {/* Keyball61モデル */}
+      <primitive
+        object={keyballModel}
+        position={[-14.9 * scale, 1.395 * scale, 5.8 * scale]}
+        scale={[1.5 * scale, 1.35 * scale, 1.35 * scale]}
+        castShadow rotation={[-1.366, -1.3555254911697836, -1.110675528147401]}
+      />
     </group>
   );
 };
